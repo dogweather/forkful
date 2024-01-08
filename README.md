@@ -2,4 +2,4 @@
 Collaborative, polyglot, multi-lingual programming cookbook
 
 ## Coming Soon
-All the programming recipes (i.e., how-to pages) will be stored here.
+All the programming recipes will be stored here.
