@@ -36,19 +36,19 @@ Would you like a language added to the book? [Post a message in the forum](https
 
 Is there a missing language we should add? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
-* English
-* Finnish
-* French
-* German
-* Hebrew
-* Hindi
-* Italian
-* Japanese
-* Korean
-* Mandarin
-* Norwegian
-* Polish
-* Portuguese
-* Spanish
-* Swedish
-* Ukrainian
+* [English](https://forkful.ai/en)
+* [Finnish](https://forkful.ai/fi)
+* [French](https://forkful.ai/fr)
+* [German](https://forkful.ai/de)
+* [Hebrew](https://forkful.ai/he)
+* [Hindi](https://forkful.ai/hi)
+* [Italian](https://forkful.ai/it)
+* [Japanese](https://forkful.ai/ja)
+* [Korean](https://forkful.ai/ko)
+* [Mandarin](https://forkful.ai/zh)
+* [Norwegian](https://forkful.ai/no)
+* [Polish](https://forkful.ai/pl)
+* [Portuguese](https://forkful.ai/pt)
+* [Spanish](https://forkful.ai/es)
+* [Swedish](https://forkful.ai/sv)
+* [Ukrainian](https://forkful.ai/uk)
