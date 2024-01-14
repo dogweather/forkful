@@ -32,25 +32,24 @@ Is there a language we should add? [Post a message in the forum](https://github.
 
 Would you like a language added to the book? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
-* Arduino
-* Bash
-* C
-* C++
-* C#
-* Clojure
-* Elixir
-* Elm
-* Fish Shell
-* Gleam
-* Go
-* Haskell
-* Java
-* Javascript
-* Kotlin
-* PHP
-* Python
-* Ruby
-* Rust
-* Swift
-* TypeScript
-
+* [Arduino](https://forkful.ai/en/arduino)
+* [Bash](https://forkful.ai/en/bash)
+* [C](https://forkful.ai/en/c)
+* [C++](https://forkful.ai/en/cpp)
+* [C#](https://forkful.ai/en/c-sharp)
+* [Clojure](https://forkful.ai/en/clojure)
+* [Elixir](https://forkful.ai/en/elixir)
+* [Elm](https://forkful.ai/en/elm)
+* [Fish Shell](https://forkful.ai/en/fish-shell)
+* [Gleam](https://forkful.ai/en/gleam)
+* [Go](https://forkful.ai/en/go)
+* [Haskell](https://forkful.ai/en/haskell)
+* [Java](https://forkful.ai/en/java)
+* [Javascript](https://forkful.ai/en/javascript)
+* [Kotlin](https://forkful.ai/en/kotlin)
+* [PHP](https://forkful.ai/en/php)
+* [Python](https://forkful.ai/en/python)
+* [Ruby](https://forkful.ai/en/ruby)
+* [Rust](https://forkful.ai/en/rust)
+* [Swift](https://forkful.ai/en/swift)
+* [TypeScript](https://forkful.ai/en/typescript)
