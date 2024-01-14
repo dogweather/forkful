@@ -8,7 +8,7 @@ This repo contains all the [Forkful](https://forkful.ai) pages starting [here](h
 
 ## Human Languages
 
-Is there a missing language we should add? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
+Is there a language we should add? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
 * [English](https://forkful.ai/en)
 * [Finnish](https://forkful.ai/fi)
