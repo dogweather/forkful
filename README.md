@@ -8,6 +8,8 @@ This repo contains all the [Forkful](https://forkful.ai) pages starting [here](h
 
 ## Programming Languages
 
+Would you like a language added to the book? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
+
 * Arduino
 * Bash
 * C
@@ -31,6 +33,8 @@ This repo contains all the [Forkful](https://forkful.ai) pages starting [here](h
 * TypeScript
 
 ## Human Languages
+
+Is there a missing language we should add? [Post a message in the forum](https://github.com/dogweather/forkful/discussions/categories/ideas).
 
 * English
 * Finnish
